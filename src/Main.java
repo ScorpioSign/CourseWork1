@@ -31,7 +31,7 @@ public class Main {
         employee[9] = new Employee("Ряжская Мария Владимировна", rnd.nextInt(1, 6), rnd.nextInt(50000, 100000));
 
         printInfo(employee); // Получаем список всех сотрудников со всеми имеющимися по ним данными
-        System.out.printf("Сумма затрат на зарплаты в месяц %d руб.", MonthSalary(employee)); // Посчитали сумму затрат на зарплаты в месяц
+        System.out.printf("Сумма затрат на зарплаты в месяц %d руб.", monthSalary(employee)); // Посчитали сумму затрат на зарплаты в месяц
         System.out.println();
         printMaxSalary(employee); //Нашли сотрудника с максимальной зарплатой
         System.out.println();
@@ -49,7 +49,7 @@ public class Main {
 
     }
 
-    public static int MonthSalary(Employee[] employee) {
+    public static int monthSalary(Employee[] employee) {
         int sum = 0;
         for (int i = 0; i < employee.length; i++) {
             sum = sum + employee[i].getSalary();
@@ -84,7 +84,7 @@ public class Main {
     }
 
     public static void printAverageSalary(Employee[] employee) {
-        System.out.println("Средняя зарплата сотрудников в месяц составляет: " + MonthSalary(employee) / employee.length + "руб.");
+        System.out.println("Средняя зарплата сотрудников в месяц составляет: " + monthSalary(employee) / employee.length + "руб.");
     }
 
     public static void printNames(Employee[] employee) {
