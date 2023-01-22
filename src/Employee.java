@@ -1,28 +1,32 @@
 public class Employee {
     private String name;
     private int department;
-    private int salary;
+    private double salary;
     public static int counter;
     private int id;
 
 
-    public Employee(String name,int department, int salary) {
+    public Employee(String name, int department, double salary) {
         this.name = name;
         this.department = department;
         this.salary = salary;
-        counter ++;
+        counter++;
         id = counter;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
+
     public int getDepartment() {
         return this.department;
     }
-    public int getSalary(){
+
+    public double getSalary() {
         return this.salary;
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
 
@@ -30,12 +34,13 @@ public class Employee {
         this.department = department;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
+
         this.salary = salary;
     }
 
     @Override
-    public String toString(){
-        return "ID " + id + " Ф.И.О " + this.name +" ; отдел " + this.department + " ; зарплата: " + this.salary;
+    public String toString() {
+        return "ID " + id + " Ф.И.О " + this.name + " ; отдел " + this.department + " ; зарплата: " + Math.round(this.salary);
     }
 }
